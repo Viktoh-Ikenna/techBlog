@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Itim&family=Overlock:ital@0;1&display=swap');
+.outer {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  font-size: 12px;
+  overflow: hidden;
+}
+.outer:hover > .inner {
+  transform: scale(1.2);
+  transition: 0.3s all linear;
+}
+.text {
+  width: 99%;
+  margin-left: 1%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  top: -100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.text h3 {
+  font-family: "Signika Negative", sans-serif;
+  margin: 0;
+  margin-bottom: 3px;
+  text-transform: capitalize;
+}
+.text div {
+  margin-bottom: 5px;
+  font-family: "Balsamiq Sans", cursive;
+  font-family: "Itim", cursive;
+  font-family: "Overlock", cursive;
+}
+.inner {
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/6/69/ImagineCover.jpg");
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

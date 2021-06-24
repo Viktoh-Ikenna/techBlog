@@ -1,0 +1,24 @@
+.deskFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: rgb(151, 146, 146);
+  text-transform: capitalize;
+  bottom: 0;
+}
+.deskFooter > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
+.deskFooter > div > div {
+  padding: 15px;
+  cursor: pointer;
+}
+.deskFooter > div > div:hover{
+    color: darkmagenta;
+    transition: linear all .3s;
+}

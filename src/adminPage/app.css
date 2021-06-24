@@ -1,0 +1,109 @@
+.adminApp {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 637px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0;
+  bottom: 0;
+}
+.sideBar {
+  background-color: rgb(7, 13, 26);
+  width: 22%;
+  height: 100%;
+  overflow-y: scroll;
+  color: white;
+}
+.sideBar::-webkit-scrollbar {
+  width: 5px;
+  height: 100%;
+}
+::-webkit-scrollbar-thumb {
+  background: blueviolet;
+  border-radius: 20%;
+}
+.sideBar > div {
+  width: 100%;
+  margin-top: 50px;
+}
+.sideBar > div > div {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  padding: 10px 10%;
+  letter-spacing: 0.2pc;
+}
+.sideBar > div > div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  position: absolute;
+  display: block;
+  width: 10%;
+  transform: translate(196%, 25%);
+}
+.sideBar > div > div ul li {
+  display: none;
+  transition: 0.4s ease-in-out all;
+  width: 100%;
+  padding: 15px 3px;
+  background-color: rgb(31, 21, 31);
+}
+.sideBar > div > div ul li:hover {
+  opacity: 0.8;
+}
+
+.sideBar > div > div:hover {
+  transition: 0.3s ease-in-out all;
+  background-color: rgb(31, 21, 31);
+  cursor: pointer;
+}
+.sideBar > div > div:hover > ul li {
+  transition: 0.4s ease-in-out all;
+  display: block;
+}
+
+.constainer {
+  width: 78%;
+  height: fit-content;
+}
+.AdminNav {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(7, 13, 26);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profileImg {
+  margin: 0 15px;
+  width: 50px;
+  background-color: red;
+  height: 100%;
+  border-radius: 50%;
+}
+.Adminlogout {
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.content {
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+  padding-bottom: 100px;
+}
+.content::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgb(7, 13, 26);
+}
+.sideBar span {
+  margin: 0 5px;
+}

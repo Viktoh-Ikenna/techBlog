@@ -1,0 +1,41 @@
+.post_listing {
+  display: flex;
+  flex-wrap: wrap;
+  width: 68%;
+  justify-content: space-between;
+  align-items: center;
+}
+.pagination{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+}
+.pagination ul{
+display:flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+padding: 0;
+margin: 9px;
+}
+.pagination ul li{
+    padding:2px 7px;
+    margin: 0 2px;
+    background-color: darkviolet;
+    color:white;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 2px rgb(239, 236, 242);
+}
+.pagination .s{
+    cursor: pointer;
+    background-color: black;
+    padding: 2px 5px;
+    color:white;
+    box-shadow: 0px 0px 1px 2px grey;
+}
+.pagination .s:hover{
+    opacity: .8;
+}

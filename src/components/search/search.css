@@ -1,0 +1,21 @@
+.search_component{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:15px;
+}
+.search_component div{
+    width:96%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+.search_component input{
+    width: 96%;
+    height: 30px;
+}

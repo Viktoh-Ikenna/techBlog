@@ -6,14 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.pageBody{
+  min-height: 500px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +37,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
