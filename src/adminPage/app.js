@@ -6,6 +6,9 @@ import {RiArticleFill,RiSettings2Line} from 'react-icons/ri'
 import {ImStatsBars} from 'react-icons/im'
 import { Allposts } from "./utils/AllPosts/Allposts";
 import { Stats } from "./utils/stats/stats";
+import { Comments } from "./utils/comments/comments";
+import { Settins } from "./utils/settings/settins";
+import { Dash } from "./utils/Dash/dash";
 
 export const AdminApp = () => {
   console.log(window.innerHeight, window.outerHeight);
@@ -47,7 +50,10 @@ export const AdminApp = () => {
         <div className="content">
           {/* <Newposts /> */}
           {/* <Allposts/> */}
-          <Stats/>
+          {/* <Stats/> */}
+       {/* <Comments/> */}
+       {/* <Settins/> */}
+       <Dash/>
         </div>
       </div>
     </div>

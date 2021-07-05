@@ -34,4 +34,17 @@
 }
 .HomeCateglisting_posts{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.HomeCateglisting_posts >div{
+width:49%;
+}
+@media only screen and (max-width:600px){
+  .HomeCateglisting_posts{
+   flex-direction: column;
+}
+  .HomeCateglisting_posts >div{
+    width:100%;
+    }
 }

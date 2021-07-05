@@ -9,7 +9,6 @@ export const PostListingPages = () => {
         display: "flex",
         width: "90%",
         margin: "20px auto",
-        border: "1px solid red",
         justifyContent:"space-between"
       }}
     >

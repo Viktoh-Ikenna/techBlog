@@ -3,10 +3,12 @@ import './ArticlePage.css'
 import { AiOutlineUser } from "react-icons/ai";
 import { MdUpdate } from "react-icons/md";
 import { Sidebar } from "../sidebar/sidebar";
+import { LeaveC } from "../LeaveComments/LeaveC";
+import { Comments } from "../Comments/Comments";
 
 export const ArticlePage = () => {
   return (
-    <div style={{width:'100%',display:'flex',justifyContent:'center'}}>
+    <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
     <div className='ArticlePage'>
        
       <div className="article">
@@ -21,7 +23,7 @@ export const ArticlePage = () => {
             jan 15 2021
           </div>
         </div>
-        <div>
+        <div className='article_text'>
           Display Kuu A10 delivers a crystal clear display with the 15.6-inch
           FHD IPS screen that offers a resolution of 1920 x 1080 pixels. The
           screen has ultra narrow bezels, which enables the screen to offer
@@ -38,6 +40,8 @@ export const ArticlePage = () => {
       </div>
       <Sidebar/>
     </div>
+    <Comments/>
+    <LeaveC/>
     </div>
   );
 };

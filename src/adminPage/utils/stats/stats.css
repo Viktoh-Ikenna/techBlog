@@ -9,15 +9,14 @@
 .stats_container {
     margin: 30px 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
-    width:90%;
+    width:95%;
 
     height:350px;
 }
 .daily_stats {
-    width:70%;
-    border: 1px solid blue;
+    width:67%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -28,8 +27,8 @@
     width:calc(95%/8);
     background-color: cadetblue;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     overflow: hidden;
     flex-direction: column;
     margin: 0 2px;
@@ -43,20 +42,26 @@
 }
 .stats_size{
     height: 100%;
-    background-color: transparent;
+    background-color: transparent !important;
     width: 10%;
+
 }
-.stats_size span{
+.stats_size div{
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: calc(97.5%/10);
-    background-color: white;
     color:black;
-    border-bottom: 1px solid red;
     padding:0;
     margin:0;
-    letter-spacing: .3pc;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white !important;
+}
+.stats_size div .dash_lines{
+    width:50%;
+    height: 2px;
+    background-color: black;
+    margin-top:7px;
 }
 .quater{
     height: 100%;
@@ -70,7 +75,7 @@ width:100%
 }
 .yearly div{
     height: 90%;
-    width: 100%;
+    width: 50%;
     border: darkmagenta 1px solid;
     justify-content: center;
     align-items: center;
@@ -88,7 +93,7 @@ width:100%
 }
 .monthly div{
     height: 90%;
-    width: 100%;
+    width: 50%;
     border: darkmagenta 1px solid;
     justify-content: center;
     align-items: center;

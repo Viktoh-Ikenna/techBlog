@@ -1,7 +1,10 @@
 import React from "react";
 import { BiComment } from "react-icons/bi";
 import "./NormalPostV.css";
-
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
 export const NormalPostV = (props) => {
   return (
 
@@ -22,7 +25,7 @@ export const NormalPostV = (props) => {
             out some of the components here, and this will be very great though,
             just trying to make the content to full
           </p>
-          <div className="Normal_postV_morebtn">More ...</div>
+          <Link to='/article' className="Normal_postV_morebtn">More ...</Link>
         </div>
       </div>
   

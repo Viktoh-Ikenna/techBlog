@@ -38,3 +38,15 @@
     transform: rotate(360deg);
   }
 } */
+
+.placements{
+  width:80%;
+  margin: 10px auto;
+  height: 150px;
+  border: 2px solid black;
+  background-image: url("https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/styles/simple_image/public/images/media/images/banner-ads-examples-aws.jpg?jwAuTeoLXQvDzDNGQ8Q3zDmWXndEqL8V&itok=tukEXkYJ");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

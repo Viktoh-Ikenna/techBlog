@@ -5,6 +5,8 @@ import { NormalPost } from "../../postTypes/normalPost/normalPost";
 import { Sidebar } from "../../sidebar/sidebar";
 import "./deskHome.css";
 
+
+
 export const DesktopHome = () => {
   return (
     <div>
@@ -13,9 +15,13 @@ export const DesktopHome = () => {
           <div>
             <ImagePost width="100%" height="100%" font="20px" />
           </div>
-          <div className="banner_post_side">
+          <div className="banner_post_side m600px">
             <ImagePost width="49.5%" height="49.5%" font="20px" />
             <ImagePost width="49.5%" height="49.5%" font="20px" />
+            <ImagePost width="49.5%" height="49.5%" font="20px" />
+            <ImagePost width="49.5%" height="49.5%" font="20px" />
+          </div>
+          <div className="banner_post_side mnot600px">
             <ImagePost width="49.5%" height="49.5%" font="20px" />
             <ImagePost width="49.5%" height="49.5%" font="20px" />
           </div>

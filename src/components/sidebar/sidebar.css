@@ -7,3 +7,8 @@
     background-size: cover;
     margin: 40px 0;;
   }
+  @media only screen and (max-width:750px){
+   .side_bar{
+     display: none !important;
+   }
+  }

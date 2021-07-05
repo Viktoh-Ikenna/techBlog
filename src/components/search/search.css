@@ -19,3 +19,6 @@
     width: 96%;
     height: 30px;
 }
+.search_component input::-webkit-input-placeholder{
+    font-size: 15px;
+}

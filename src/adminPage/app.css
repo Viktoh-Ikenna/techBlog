@@ -97,7 +97,7 @@
 .content {
   width: 100%;
   overflow-y: scroll;
-  height: 500px;
+  height:500px;
   padding-bottom: 100px;
 }
 .content::-webkit-scrollbar {

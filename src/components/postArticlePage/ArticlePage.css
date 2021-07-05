@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&display=swap');
 .ArticlePage{
     display: flex;
     justify-content: space-between;
     width:85%;
     align-items: flex-start;
     margin: 30px 0;
-    border: 1px solid red;
 }
 .ArticlePage .article{
     width:68%;
@@ -21,13 +21,53 @@
     text-align: left;
     font-size: 50px;
     margin: 20px 0;
+    font-family: 'Kanit', sans-serif;
+    padding: 0;
+   
+
 }
 .ArticlePage .article .artice_details{
 display: flex;
 justify-content: space-between;
 align-items: center;
 font-weight: bolder;
-color: rgb(143, 137, 137);
 margin-bottom: 20px;
-width:25%;
+width:35%;
+color: blue;
+font-size: 20px;
+}
+.article_text{
+    font-size: 25px;
+
+}
+@media only screen and (max-width:1250px){
+    .ArticlePage .article .artice_details{
+        width: 40%;
+    }
+
+}
+@media only screen and (max-width:1090px){
+    .ArticlePage .article .artice_details{
+        width: 45%;
+    }
+
+
+}
+@media only screen and (max-width:970px){
+    .ArticlePage .article .artice_details{
+        width: 50%;
+    }
+
+}
+@media only screen and (max-width:800px){
+    .ArticlePage .article .artice_details{
+        width: 60%;
+    }
+    .ArticlePage .article{
+        width:100%;
+    }
+    .ArticlePage .article h1{
+        margin: 0 !important;
+        padding: 0 !important;
+       }
 }

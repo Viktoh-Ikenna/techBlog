@@ -1,0 +1,64 @@
+.admin_settings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+.settings_control {
+  width: 30%;
+  height: fit-content;
+  margin: 0 4px;
+}
+.settings_control > div {
+  width: 100%;
+  height: 35px;
+  border: 2px solid rgb(1, 11, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(1, 11, 39);
+}
+.settings_control > div:hover {
+  transition: 0.2s ease-in-out all;
+  background-color: rgb(1, 11, 39);
+  color: white;
+}
+
+.settings_view {
+  width: 65%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+
+  background-color: rgba(233, 230, 230, 0.856);
+}
+.settings_view table {
+  width: 90%;
+  margin: 15px 0;
+}
+.settings_view table input {
+  width: 90%;
+  background: none;
+  border: 2px solid rgb(32, 30, 136);
+  height: 30px;
+  padding: 0px 10px;
+}
+.settings_view table input {
+  cursor: text;
+}
+.upadate_details {
+  margin: 10px 25px;
+  padding: 5px 10px;
+  background-color: rgb(32, 30, 136);
+  color: white;
+  border-radius: 3px;
+}
+.upadate_details:hover {
+  background-color: rgb(6, 5, 70);
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.leave_comments{
+    width:85%;
+    height: fit-content;
+    margin: 15px 0;
+
+}
+.leave_comments >div{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 450px;
+}
+.leave_comments input::-webkit-input-placeholder{
+font-size: 15px;
+}
+.leave_comments input{
+    width:90%;
+    height: 30px;
+    margin: 7px 0;
+    outline:blue;
+}
+.submit_comment{
+    width:30%;
+    padding: 10px 20px;
+    color: white;
+    background-color: cornflowerblue;
+    
+}
+textarea{
+    outline:blue;
+
+}
+@media only screen and (max-width:600px){
+    .leave_comments >div{
+        width: 100%;}
+}
