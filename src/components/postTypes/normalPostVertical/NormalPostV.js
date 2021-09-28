@@ -6,14 +6,16 @@ import {
   useLocation,
 } from "react-router-dom";
 export const NormalPostV = (props) => {
+  // console.log(props.post)
   return (
-
-      <div style={props.style} className="Normal_postV_cont">
-        <div className="Normal_postV_cont_image"></div>
+<div style={props.style} className="Normal_postV_cont">
+        <div className="Normal_postV_cont_image"style={{ 
+      backgroundImage: `url("${props.post.image}")` 
+    }} ></div>
         <div className="Normal_postV_text_cont">
-          <h2>am just testing out to know whatsup</h2>
+          <h2>{props.post.Title}</h2>
           <div className="Normal_postV_cont_date">
-            <div>12-06-2021</div>
+            <div>{props.post.Date}</div>
             <div>
               <BiComment />
               200
@@ -21,13 +23,12 @@ export const NormalPostV = (props) => {
           </div>
 
           <p>
-            I is very great viewing this page like this, lets just start testing
-            out some of the components here, and this will be very great though,
-            just trying to make the content to full
+            {props.post.Article.replace(/<\/?[^>]+(>|$)/g, "").split('').filter((e,i)=>i<50).join('')} 
+            ...
           </p>
-          <Link to='/article' className="Normal_postV_morebtn">More ...</Link>
+          <Link to={`/article/${props.post._id}`} className="Normal_postV_morebtn">More ...</Link>
         </div>
       </div>
-  
+
   );
 };

@@ -10,7 +10,7 @@
 }
 .NewPosts .title{
     margin: 20px;
-    width:80%;
+    width:90%;
 
 }
 .NewPosts .title input{
@@ -19,15 +19,27 @@
     height: 50px;
     font-size: 35px;
 }
-::-webkit-input-placeholder{
+.NewPosts .title input::-webkit-input-placeholder{
     font-size: 35px;
     padding: 0px 3px;
 }
-.Text_Body{
-
-}
 .NewPosts .category{
-    width:80%
+    width:80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: rgb(175, 141, 204) 0px 0px 5px 1px;
+    padding: 20px;
+    margin: 30px 0
+}
+.NewPosts .category>label{
+    line-height: 20px;
+    margin-left: 8px;
+}
+
+.NewPosts .category>h3{
+    margin-bottom:7px ;
 }
 .NewPosts .select{
     width:95%;
@@ -47,7 +59,7 @@
    margin: 0;
 }
 .Text_Body{
-    width:80%;
+    width:90%;
     border: 2px solid black;
     min-height: 300px;
 }
@@ -61,4 +73,83 @@ cursor: pointer;
 .Publish:hover{
     transition: .3s linear all;
 background-color: rgb(56, 3, 105);
+}
+.form_post{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Editor_input{
+    width:75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.form_options{
+    width:25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.admin_specification{
+    width:80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: rgb(175, 141, 204) 0px 0px 5px 1px;
+    padding: 20px;
+    margin: 50px 0
+
+}
+.admin_specification>label{
+    margin-left: 8px;
+    line-height: 25px;
+}
+.admin_specification>label input,.admin_specification>label select{
+    width: 70px;
+    margin: 0 10px;
+}
+.admin_specification>h3{
+margin-bottom: 10px;
+}
+.post-image{
+    width:90%;
+    height: 150px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.post_img{
+    width:50%;
+    height:100%;
+    border:2px dashed blue;
+    background-image: url();
+    background-color: #cccccc;
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon{
+width:100%;
+height: 100%;
+background-color: black;
+opacity: .6;
+transform: scaleX(0);
+transition: .4s ease-in-out all;
+font-size: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+cursor: pointer;
+}
+.post_img:hover>.icon{
+    transform: scaleX(1);
 }

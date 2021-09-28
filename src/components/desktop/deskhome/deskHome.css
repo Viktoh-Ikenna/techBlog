@@ -37,7 +37,7 @@
 }
 .side_bar{
   width:30%;
-  background-color: rgb(226, 216, 216);
+  background-color: #ebebeb;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -46,7 +46,7 @@
 .popularPost h3{
   margin: 0;
   background-color: black;
-  color: blanchedalmond;
+  color: #ebebeb;
   padding:7px 0 ;
   border-radius: 3px;
 }

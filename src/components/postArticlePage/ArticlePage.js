@@ -1,45 +1,56 @@
-import React from "react";
+import React, { useEffect ,useState} from "react";
 import './ArticlePage.css'
 import { AiOutlineUser } from "react-icons/ai";
 import { MdUpdate } from "react-icons/md";
 import { Sidebar } from "../sidebar/sidebar";
 import { LeaveC } from "../LeaveComments/LeaveC";
 import { Comments } from "../Comments/Comments";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Markup } from 'react-render-markup';
+import { Fullscreen } from "../Spinner/fullscreen";
 
-export const ArticlePage = () => {
+
+export const ArticlePage = (props) => {
+  const params=useParams();
+  const [posts, setposts] = useState(null)
+  useEffect(()=>{
+    (async()=>{
+      const response =await axios.get(`http://localhost:3500/api/save/posts-page/${params.id}`)
+     const data=await response.data.data;
+     setposts(data)
+    })()
+  },[])
+
   return (
+
     <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-    <div className='ArticlePage'>
+    {
+      posts?(
+        <div className='ArticlePage'>
        
-      <div className="article">
-        <h1 className="title">This is just about the Game</h1>
-        <div className="artice_details">
-          <div>
-            <AiOutlineUser />
-            don-viktoh
+        <div className="article">
+          <h1 className="title">{posts.Title}</h1>
+          <div className="artice_details">
+            <div>
+              <AiOutlineUser />
+              {posts.Author.name}
+            </div>
+            <div>
+              <MdUpdate />
+            {posts.Date}
+            </div>
           </div>
-          <div>
-            <MdUpdate />
-            jan 15 2021
+          <div className='article_text'>
+       <Markup markup={posts.Article} />
           </div>
         </div>
-        <div className='article_text'>
-          Display Kuu A10 delivers a crystal clear display with the 15.6-inch
-          FHD IPS screen that offers a resolution of 1920 x 1080 pixels. The
-          screen has ultra narrow bezels, which enables the screen to offer
-          higher screen-to-body ratio, hence providing vivid visual effects.
-          Thanks to the FHD IPS panel, this laptop display offers a 178-degree
-          wide-viewing angle, and also support 89% sRGB color gamut, hence,
-          ensure that colors and contrast stay accurate no matter where you sit,
-          even when viewed at sharp angles. Kuu A10 display also has a 16:9
-          aspect ratio which delivers exceptionally detailed and realistic
-          visuals. Performance KUU A10 is equipped with Intel Celeron J4125
-          processor, a quad-core chipset based on the Gemini Lake platform to
-          offer impressive performance.
-        </div>
+        <Sidebar/>
+       
       </div>
-      <Sidebar/>
-    </div>
+      ): <Fullscreen/>
+    }
+   
     <Comments/>
     <LeaveC/>
     </div>

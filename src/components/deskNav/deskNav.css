@@ -52,7 +52,7 @@
 .category_menu >div>div{
     cursor:pointer;
 }
-.category_menu .categories>div {
+.category_menu .categories>div,.category_menu .categories>a {
     display: block;
     height: 50px;
     display: flex;
@@ -60,6 +60,7 @@
     justify-content: center;
     width: 100%;
     text-transform: capitalize;
+    color:rgb(151, 146, 146);
 }
 .category_menu .categories .submenu{
     transition: .5s all ease-in-out;
@@ -70,15 +71,16 @@
     transform:scaleY(0) translate(-30%,100%) ;
 
 }
-.submenu >li{
+.submenu >li,.submenu >a{
     position: relative;
     background-color: rgb(43, 42, 42);
     display: block;
     width:150%;
     line-height: 40px;
     text-transform: capitalize;
+    color:rgb(151, 146, 146);
 }
-.submenu >li:hover{
+.submenu >li:hover,.submenu >a:hover{
     transition: .45s all ease-in-out;
     color:purple;
     border-bottom: 1px solid purple;
@@ -89,7 +91,7 @@ transform: scaleY(1) translate(-30%,65%) ;
 
 
 }
-.category_menu .categories>div:hover{
+.category_menu .categories>div:hover,.category_menu .categories>a:hover{
     transition: .3s all linear;
     background-color: rgb(43, 42, 42);
 }

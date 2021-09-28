@@ -1,8 +1,8 @@
 import DeskFooter from "../DeskFooter/deskFooter";
 import DeskNav from "../deskNav/deskNav";
-import { DesktopHome } from "../desktop/deskhome/desktopHome";
+import DesktopHome from "../desktop/deskhome/desktopHome";
 import { ArticlePage } from "../postArticlePage/ArticlePage";
-import { PostListingPages } from "../PostListingPages/postListingPages";
+import  PostListingPages from "../PostListingPages/postListingPages";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -24,10 +24,10 @@ function App() {
             <Route exact path="/">
               <DesktopHome />
             </Route>
-            <Route path='/posts'>
+            <Route path='/posts/:id'>
               <PostListingPages />
             </Route>
-            <Route path='/article'>
+            <Route path='/article/:id'>
               <ArticlePage />
             </Route>
             <Route path='*'>

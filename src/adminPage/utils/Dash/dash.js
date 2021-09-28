@@ -1,5 +1,6 @@
 import React from 'react';
-import './dash.css'
+import './dash.css';
+
 
 export const Dash = () => {
     return (

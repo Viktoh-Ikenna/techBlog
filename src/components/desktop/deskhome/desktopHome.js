@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { HomeCateglisting } from "../../HomeCategListing/HomeCateglisting";
 import { ImagePost } from "../../postTypes/imagePost/imagePost";
 import { NormalPost } from "../../postTypes/normalPost/normalPost";
@@ -7,38 +9,71 @@ import "./deskHome.css";
 
 
 
-export const DesktopHome = () => {
+const DesktopHome = (props) => {
+
+  useEffect(()=>{
+    (async()=>{
+      const response =axios.get("http://localhost:3500/api/save/Blogposts-page",{withCredentials:true})
+  // console.log((await response).data.data)
+      props.StorePosts((await response).data.data);
+      
+    })()
+  },[])
+  // console.log(props.posts)
   return (
     <div>
       <div className="banner_post">
         <div>
           <div>
-            <ImagePost width="100%" height="100%" font="20px" />
+          {props.posts.all?props.posts.all.filter((e,i)=>i===(props.posts.all.length-1)).map((e,i)=>{
+          return(
+            <ImagePost key={i} post={e} width="100%" height="100%" font="20px" />
+          )
+        }):''
+      }
           </div>
           <div className="banner_post_side m600px">
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
+          {props.posts.all?props.posts.all.filter((e,i)=>i<4).map((e,i)=>{
+          return(
+            <ImagePost key={i} post={e}  width="49.5%" height="49.5%" font="20px" />
+          )
+        }):''
+      } 
           </div>
           <div className="banner_post_side mnot600px">
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
-            <ImagePost width="49.5%" height="49.5%" font="20px" />
+          {props.posts.all?props.posts.all.filter((e,i)=>i<2).map((e,i)=>{
+          return(
+            <ImagePost key={i} post={e} width="49.5%" height="49.5%" font="20px" />
+          )
+        }):''
+      } 
           </div>
         </div>
       </div>
+      
       <div className="banner_post_bottom">
-        <ImagePost width="25%" height="100%" font="12px" />
-        <ImagePost width="25%" height="100%" font="12px" />
-        <ImagePost width="25%" height="100%" font="12px" />
-        <ImagePost width="25%" height="100%" font="12px" />
+      {props.posts.all?props.posts.all.filter((e,i)=>i<4).map((e,i)=>{
+          return(
+            <ImagePost key={i} post={e} width="25%" height="100%" font="12px" />
+          )
+        }):''
+      } 
       </div>
       <div className="Desktop_home_body">
+
+
+
+      
+
+
+
+
+    
         <div className="main_bar">
           <div>
-            <HomeCateglisting name="mobile" />
-            <HomeCateglisting name="laptops" />
-            <HomeCateglisting name="accessories" />
+            {props.posts?<><HomeCateglisting name="mobile" posts={props.posts['mobile']}/>
+            <HomeCateglisting name="laptops" posts={props.posts['laptops']} />
+            <HomeCateglisting name="accessories" posts={props.posts['accessories']}/></>:''}
           </div>
         </div>
         <Sidebar />
@@ -46,3 +81,20 @@ export const DesktopHome = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    posts: state.Client,
+  };
+};
+
+//this sets the dispatch method props for the dispatching data
+
+const setter = (dispatch) => {
+  return {
+    StorePosts: (posts) => {
+      dispatch({ type: "allPost", payload: posts });
+    }
+  };
+};
+
+export default connect(mapStateToProps, setter)(DesktopHome);

@@ -5,14 +5,16 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
-export const NormalPost = () => {
+export const NormalPost = (props) => {
   return (
-    <Link to='/article' className="Normal_post_cont">
-      <div className='Normal_post_cont_image'></div>
+    <Link key={props.post._id} to={`/article/${props.post._id}`} className="Normal_post_cont">
+      <div className='Normal_post_cont_image' style={{ 
+      backgroundImage: `url("${props.post.image}")` 
+    }}></div>
       <div className='Normal_post_text_cont'>
-        <h3>am just testing out to know whatsup</h3>
+        <h3>{props.post.Title}</h3>
         <div>
-          <div>12-06-2021</div>
+          <div>{props.post.Date}</div>
           <div><BiComment/>200</div>
         </div>
       </div>

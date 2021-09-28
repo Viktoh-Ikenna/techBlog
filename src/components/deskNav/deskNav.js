@@ -62,27 +62,20 @@ const DeskNav = () => {
           <>
             {" "}
             <div className="categories">
-              <div>
-                Mobile <MdKeyboardArrowDown />
-                <ul className="submenu">
-                  <li>android</li>
-                  <li>iphones</li>
-                  <li>protable</li>
-                  <li>google pixes</li>
-                </ul>
-              </div>
-              <div>Laptops</div>
+            <Link to="/posts/mobile">Mobile</Link>
+              <Link to="/posts/laptops">Laptops</Link>
               <div>
                 gadgets <MdKeyboardArrowDown />
                 <ul className="submenu">
-                  <li>android</li>
-                  <li>chargers</li>
-                  <li>protable</li>
-                  <li>earPhones</li>
+                  <Link to="/posts/laptops">android</Link>
+                  <Link to="/posts/laptops">chargers</Link>
+                  <Link to="/posts/laptops">protable</Link>
+                  <Link to="/posts/laptops">earPhones</Link>
                 </ul>
               </div>
-              <div>accessories</div>
-              <div>others</div>
+              <Link to="/posts/laptops">Laptops</Link>
+              <Link to="/posts/accessories">accessories</Link>
+
             </div>
             <div className="search_btn" onClick={handleSearch}>
               <RiSearch2Line />

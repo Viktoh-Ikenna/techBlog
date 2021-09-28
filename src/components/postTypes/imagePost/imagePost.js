@@ -8,12 +8,14 @@ import {
 export const ImagePost = (props) => {
   return (
       <div style={{width:props.width,height:props.height,fontSize:props.font}} className="outer">
-       <div className="inner">
+       <div className="inner" style={{ 
+      backgroundImage: `url("${props.post.image}")` 
+    }}>
         </div>
-        <Link to='/article' className="text">
-          <h3>i am just trying to know whether it will work</h3>
+        <Link to={`/article/${props.post._id}`} className="text">
+          <h3>{props.post.Title}</h3>
           <div>
-            a kind of still testing this one too to know whethter e go work
+          {props.post.Article.replace(/<\/?[^>]+(>|$)/g, "").split('').filter((e,i)=>i<50).join('')}
           </div>
         </Link>
       </div>

@@ -16,6 +16,7 @@
   height: 100%;
   overflow-y: scroll;
   color: white;
+  transition: .5s all ease-in-out;
 }
 .sideBar::-webkit-scrollbar {
   width: 5px;
@@ -27,51 +28,76 @@
 }
 .sideBar > div {
   width: 100%;
-  margin-top: 50px;
 }
-.sideBar > div > div {
+.sideBar > div > a {
   font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 90%;
-  padding: 10px 10%;
   letter-spacing: 0.2pc;
+  color: white;
+  flex-direction: column;
+  height: 50px;
+  padding-top: 17px;
+  padding-bottom:2px ;
+  padding-left: 7px;
+
 }
-.sideBar > div > div ul {
+
+.sideBar > div >a span{
+  display: flex;
+  width: 100%;
+height: 100%;
+}
+.sideBar > div >a span >p{
+margin: 0 10px;
+  
+}
+.sideBar > div > a ul {
   list-style: none;
   padding: 0;
   margin: 0;
   font-size: 15px;
-  position: absolute;
   display: block;
-  width: 10%;
-  transform: translate(196%, 25%);
+  position: relative;
+  width: 100%;
+  transform: scaleY(0);
+ 
 }
-.sideBar > div > div ul li {
-  display: none;
+.sideBar > div > a ul li {
   transition: 0.4s ease-in-out all;
   width: 100%;
   padding: 15px 3px;
   background-color: rgb(31, 21, 31);
+  color: white !important;
+
 }
-.sideBar > div > div ul li:hover {
+.sideBar > div > a ul li:hover {
   opacity: 0.8;
+
 }
 
-.sideBar > div > div:hover {
-  transition: 0.3s ease-in-out all;
-  background-color: rgb(31, 21, 31);
-  cursor: pointer;
-}
-.sideBar > div > div:hover > ul li {
+.sideBar > div > a:hover {
   transition: 0.4s ease-in-out all;
-  display: block;
+  background-color: white;
+  color:rgb(7, 13, 26) ;
+  cursor: pointer;
+  min-height: 60px;
+  height: fit-content
+
+}
+.sideBar > div > a:hover > ul {
+  transition: 0.4s ease-in-out all;
+  transform: scaleY(1);
+
 }
 
 .constainer {
   width: 78%;
   height: fit-content;
+  transition: .5s all ease-in-out;
+
 }
 .AdminNav {
   width: 100%;
@@ -85,9 +111,12 @@
 .profileImg {
   margin: 0 15px;
   width: 50px;
-  background-color: red;
   height: 100%;
   border-radius: 50%;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Adminlogout {
   color: white;
@@ -106,4 +135,112 @@
 }
 .sideBar span {
   margin: 0 5px;
+}
+.toggle_admin{
+  font-size: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.ttoggle_admin{
+  width:7%;
+}
+.ttoggle_admin >div>a{
+}
+.ttoggle_admin >div>a>span>p{
+display: none;
+padding-left: 30%;
+}
+.ttoggle_admin >div>a>span>svg{
+font-size: 50px;
+  }
+
+
+/*------------- for admin login ----------- */
+
+.admin_login{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(2, 22, 53);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.login_bal{
+  padding: 20px;
+  flex-shrink: 1;
+  width:350px;
+  height: 270px;
+  background-color: white;
+  box-shadow: rgba(5, 214, 241, 0.5) 0px 0px 5px 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.login_bal>div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  flex-direction: column;
+
+}
+.login_bal>div>div{
+  margin: 10px 0;
+  width:100%;
+  height: 40px;
+  border: 2px solid rgb(25, 158, 219);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0 5px;
+}
+.login_bal>div>div>input{
+  width: 95%;
+  height: 100%;
+  background: none;
+  border:none;
+  outline: 0;
+}
+.login_bal>div>div>span{
+cursor: pointer;}
+
+.login_bal input::placeholder{
+font-size: 20px !important;
+color:red !important;
+}
+.login_bal>div>div:focus-within{
+border:3px solid blue;
+box-shadow: rgb(153, 190, 233) 0px 0px 3px 1px;
+}
+.login_bal p{
+text-transform: capitalize;
+font-size: 17px;
+font-weight: bold;
+}
+.submit_cont{
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  margin: 15px 0;
+  align-items: center !important;
+}
+.submit_cont button{
+  background-color: rgb(25, 158, 219);
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+.submit_cont span{
+  padding: 0 5px;
+  margin: 0;
+}
+.submit_cont button:hover{
+opacity: 0.7;
 }
