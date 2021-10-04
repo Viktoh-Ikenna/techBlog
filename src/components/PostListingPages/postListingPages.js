@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import { PostListing } from "../postListing/PostListing";
 import { Sidebar } from "../sidebar/sidebar";
-
+import { url } from "../../baseHost";
 const PostListingPages = (props) => {
   const params = useParams();
   const [posts, setPosts] = useState(null);
 
 useEffect(()=>{
   (async()=>{
-    const response =axios.get("http://localhost:3500/api/save/Blogposts-page")
+    const response =axios.get(`${url}/api/save/Blogposts-page`)
 // console.log((await response).data.data)
     props.StorePosts((await response).data.data);
     filterIt()

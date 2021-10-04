@@ -6,11 +6,12 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { HaphSpinner } from "../../../components/Spinner/haphSpinner";
+import { url } from "../../../baseHost";
 
 const Allposts = (props) => {
 useEffect(()=>{
   (async()=>{
-const response =axios.get("http://localhost:3500/api/save/Blogposts",{withCredentials:true})
+const response =axios.get(`${url}/api/save/Blogposts`,{withCredentials:true})
 props.StorePosts((await response).data.data)
   })()
 },[])

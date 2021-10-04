@@ -9,6 +9,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Markup } from 'react-render-markup';
 import { Fullscreen } from "../Spinner/fullscreen";
+import { url } from "../../baseHost";
 
 
 export const ArticlePage = (props) => {
@@ -16,7 +17,7 @@ export const ArticlePage = (props) => {
   const [posts, setposts] = useState(null)
   useEffect(()=>{
     (async()=>{
-      const response =await axios.get(`http://localhost:3500/api/save/posts-page/${params.id}`)
+      const response =await axios.get(`${url}/api/save/posts-page/${params.id}`)
      const data=await response.data.data;
      setposts(data)
     })()

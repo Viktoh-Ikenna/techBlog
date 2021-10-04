@@ -16,6 +16,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import $, { data } from "jquery";
 import { Fullscreen } from "../components/Spinner/fullscreen";
+import { url } from "../baseHost";
 var slugify = require("slugify");
 
 const AdminApp = (props) => {
@@ -36,7 +37,7 @@ const AdminApp = (props) => {
   // }, [props.Login.state]);
   useEffect(() => {
     axios
-      .get("http://localhost:3500/admin", { withCredentials: true })
+      .get(`${url}/admin`, { withCredentials: true })
       .then((data) => {
         // console.log(data.data)
         props.user(data.data)
@@ -54,7 +55,7 @@ const AdminApp = (props) => {
   useEffect(() => {
     if (props.Login.data !== undefined) {
       setprofileImg(
-        `http://localhost:3500/${
+        `${url}/${
           props.Login.data.image.split("/")[0]
         }/${slugify(`${props.Login.data.image.split("/")[1]}`, {
           replacement: "%20",
@@ -67,7 +68,7 @@ const AdminApp = (props) => {
   const handleSubmit = () => {
     (async () => {
 setSpining(true)
-      const apiData = await fetch("http://localhost:3500/admin-login", {
+      const apiData = await fetch(`${url}/admin-login`, {
         method: "POST",
         body: JSON.stringify({
           name: username.current.value,
@@ -114,7 +115,7 @@ setSpining(true)
       },
       withCredentials: true,
     };
-    axios.post("http://localhost:3500/admin-profile", pix, config);
+    axios.post(`${url}/admin-profile`, pix, config);
   };
 
   return (

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { url } from "../../../baseHost";
 import { HomeCateglisting } from "../../HomeCategListing/HomeCateglisting";
 import { ImagePost } from "../../postTypes/imagePost/imagePost";
 import { NormalPost } from "../../postTypes/normalPost/normalPost";
@@ -13,7 +14,7 @@ const DesktopHome = (props) => {
 
   useEffect(()=>{
     (async()=>{
-      const response =axios.get("http://localhost:3500/api/save/Blogposts-page",{withCredentials:true})
+      const response =axios.get(`${url}/api/save/Blogposts-page`,{withCredentials:true})
   // console.log((await response).data.data)
       props.StorePosts((await response).data.data);
       

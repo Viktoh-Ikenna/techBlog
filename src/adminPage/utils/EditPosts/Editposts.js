@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { RiNurseFill } from "react-icons/ri";
 import { EditorToolbarWhenFocused } from "../../Editor2";
 import { Fullscreen } from "../../../components/Spinner/fullscreen";
+import { url } from "../../../baseHost";
 
 export const Editposts = (props) => {
   const Titly = useRef();
@@ -21,7 +22,7 @@ export const Editposts = (props) => {
     "https://upload.wikimedia.org/wikipedia/en/6/69/ImagineCover.jpg"
   );
   const Filldate = new Date();
-  const date = `${Filldate.getDate()}-${Filldate.getMonth()}-${Filldate.getFullYear()}`;
+  const date = `${Filldate.getDate()}-${Filldate.getMonth()+1}-${Filldate.getFullYear()}`;
 
   const handleEditor = (text) => {
     props.body(text);
@@ -71,7 +72,7 @@ export const Editposts = (props) => {
         if (send > 0 && props.SubmitPost.Title !== "") {
           setspinner(true)
           const response = await axios.post(
-            `http://localhost:3500/api/save/updatePosts/${paprams.id}`,
+            `${url}/api/save/updatePosts/${paprams.id}`,
             fmd,
             config
           );
@@ -91,7 +92,7 @@ export const Editposts = (props) => {
       try {
         // console.log('z',paprams.id)
         const response = axios.get(
-          `http://localhost:3500/api/save/posts/${paprams.id}`,
+          `${url}/api/save/posts/${paprams.id}`,
           { withCredentials: true }
         );
         // console.log('daa',(await response).data.data)

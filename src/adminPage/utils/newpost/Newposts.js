@@ -6,6 +6,7 @@ import axios from "axios";
 import { CgFormatIndentDecrease } from "react-icons/cg";
 import {AiFillFileAdd} from 'react-icons/ai'
 import { Fullscreen } from "../../../components/Spinner/fullscreen";
+import { url } from "../../../baseHost";
 
 export const Newposts = (props) => {
   const [send, setsend] = useState(0);
@@ -66,7 +67,7 @@ props.Date(date)
       if(send>0){
         setspinner(true)
         const response = await axios.post(
-          "http://localhost:3500/api/save/BlogPosts",
+          `${url}api/save/BlogPosts`,
           fmd,
           config
         );
@@ -92,7 +93,7 @@ props.Date(date)
     console.log(image.current.files[0]);
     let fd = new FormData();
     fd.append("avata", image.current.files[0]);
-    axios.post("http://localhost:3500/api/save/images", fd,config);
+    axios.post(`${url}/api/save/images`, fd,config);
   };
 
 
