@@ -62,19 +62,19 @@ const DeskNav = () => {
           <>
             {" "}
             <div className="categories">
-            <Link to="/posts/mobile">Mobile</Link>
-              <Link to="/posts/laptops">Laptops</Link>
+            <Link to="/posts/mobile/1">Mobile</Link>
+              <Link to="/posts/laptops/1">Laptops</Link>
               <div>
                 gadgets <MdKeyboardArrowDown />
                 <ul className="submenu">
-                  <Link to="/posts/laptops">android</Link>
-                  <Link to="/posts/laptops">chargers</Link>
-                  <Link to="/posts/laptops">protable</Link>
-                  <Link to="/posts/laptops">earPhones</Link>
+                  <Link to="/posts/laptops/1">android</Link>
+                  <Link to="/posts/laptops/1">chargers</Link>
+                  <Link to="/posts/laptops/1">protable</Link>
+                  <Link to="/posts/laptops/1">earPhones</Link>
                 </ul>
               </div>
-              <Link to="/posts/laptops">Laptops</Link>
-              <Link to="/posts/accessories">accessories</Link>
+              <Link to="/posts/laptops/1">Laptops</Link>
+              <Link to="/posts/accessories/1">accessories</Link>
 
             </div>
             <div className="search_btn" onClick={handleSearch}>

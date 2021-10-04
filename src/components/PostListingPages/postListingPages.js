@@ -11,7 +11,7 @@ const PostListingPages = (props) => {
 
 useEffect(()=>{
   (async()=>{
-    const response =axios.get("http://localhost:3500/api/save/Blogposts-page",{withCredentials:true})
+    const response =axios.get("http://localhost:3500/api/save/Blogposts-page")
 // console.log((await response).data.data)
     props.StorePosts((await response).data.data);
     filterIt()

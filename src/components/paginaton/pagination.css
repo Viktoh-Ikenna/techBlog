@@ -14,7 +14,7 @@ list-style: none;
 padding: 0;
 margin: 9px;
 }
-.pagination ul li{
+.pagination ul a{
     padding:2px 7px;
     margin: 0 2px;
     border: 2px solid darkviolet;
@@ -24,7 +24,17 @@ margin: 9px;
     display: flex;
     align-items: center;
 }
-.pagination ul li:hover{
+.pagination ul li{
+    padding:2px 7px;
+    margin: 0 2px;
+    border: 2px solid darkviolet;
+    color:darkviolet;
+    box-shadow: 0px 0px 1px 2px rgb(239, 236, 242);
+    display: flex;
+    align-items: center;
+opacity: .4;
+}
+.pagination ul a:hover{
     box-shadow:rgb(138, 120, 146) 0px 0px 3px 2px;
 }
 .pagination .s{

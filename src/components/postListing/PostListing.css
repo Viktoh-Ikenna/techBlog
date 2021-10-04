@@ -2,8 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 68%;
-  justify-content: space-between;
-  align-items: flex-start;
+     justify-content: space-around;
+     align-items: flex-start;
+     align-content: flex-start;
+     flex: auto;
 }
 @media only screen and (max-width:600px){
  

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Pagination } from "../paginaton/Pagination";
 import { NormalPostV } from "../postTypes/normalPostVertical/NormalPostV";
 import { Fullscreen } from "../Spinner/fullscreen";
 import "./PostListing.css";
 export const PostListing = ({ state }) => {
+  const params = useParams()
+  const [posts,setPosts]=useState(null)
   const [size, setSize] = useState("32%");
   useEffect(() => {
     const w = window.screen.width;
@@ -30,17 +33,20 @@ export const PostListing = ({ state }) => {
       setSize("90%");
     }
   };
-  // console.log('state',state)
+  useEffect(() => {
+    setPosts(state?state.reverse().filter((el,page)=>page>(+params.page===1?-1:(+params.page-1)*6)):"")
+  }, [params.page,state])
+  
   return (
     <div className="post_listing">
-      {state ? (
-        state.map((lement, id) => {
+      {posts ? (
+        posts.map((lement, id) => {
           return <NormalPostV style={{ width: size }} post={lement} key={id} />;
         })
       ) : (
         <Fullscreen />
       )}
-      {state ? state.length > 9 ? <Pagination /> : <></> : <></>}
+      {posts ? state.length > 7 ? <Pagination state={state.reverse().filter((el,page)=>page>(+params.page===1?-1:(+params.page-1)*6)).length} /> : <></> : <></>}
     </div>
   );
 };

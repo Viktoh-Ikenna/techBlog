@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/">
               <DesktopHome />
             </Route>
-            <Route path='/posts/:id'>
+            <Route path='/posts/:id/:page'>
               <PostListingPages />
             </Route>
             <Route path='/article/:id'>

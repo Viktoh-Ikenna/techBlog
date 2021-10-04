@@ -8,6 +8,7 @@
   margin: 10px 0;
   display:flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .Normal_postV_cont_image {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png");
@@ -51,4 +52,10 @@
 }
 .Normal_postV_cont_date div {
   padding: 0 10px;
+}
+.Normal_postV_text_cont{
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  min-height: 40%;
 }

@@ -22,28 +22,7 @@ export const Sidebar = () => {
         }}
         className="side_banner"
       ></div>
-      <div
-        style={{
-          backgroundImage: `url("https://coreldrawdesign.com/resources/previews/preview-school-admission-social-media-banner-design-free-vector-1603890701.jpg")`,
-        }}
-        className="side_banner"
-      ></div>
-      <div className="popularPost">
-        <h3>popularPost</h3>
-        <div>
-          <div>i am just testing it out</div>
-          <div>i am just testing it out</div>
-          <div>i am just testing it out</div>
-          <div>i am just testing it out</div>
-          <div>i am just testing it out</div>
-        </div>
-      </div>
-      <div
-        style={{
-          backgroundImage: `url("https://static.vecteezy.com/system/resources/thumbnails/001/921/891/small/square-banner-templates-for-interior-design-free-vector.jpg")`,
-        }}
-        className="side_banner"
-      ></div>
+     
     </div>
   );
 };
