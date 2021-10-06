@@ -5,12 +5,13 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+import { url } from "../../../baseHost";
 export const NormalPostV = (props) => {
   // console.log(props.post)
   return (
 <div style={props.style} className="Normal_postV_cont">
         <div className="Normal_postV_cont_image"style={{ 
-      backgroundImage: `url("${props.post.image}")` 
+      backgroundImage: `url("${url}/${props.post.image}")` 
     }} ></div>
         <div className="Normal_postV_text_cont">
           <h2>{props.post.Title}</h2>

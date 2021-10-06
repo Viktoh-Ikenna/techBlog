@@ -4,12 +4,13 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+import { url } from "../../../baseHost";
 
 export const ImagePost = (props) => {
   return (
       <div style={{width:props.width,height:props.height,fontSize:props.font}} className="outer">
        <div className="inner" style={{ 
-      backgroundImage: `url("${props.post.image}")` 
+      backgroundImage: `url("${url}/${props.post.image}")` 
     }}>
         </div>
         <Link to={`/article/${props.post._id}`} className="text">

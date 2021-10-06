@@ -146,7 +146,7 @@ props.Date(date)
           </div>
           <div className="post-image">
             <input ref={image} onChange={handleimgChange} type="file" style={{display:'none'}}/>
-            <div className="post_img" style={{backgroundImage:`url(${im})`}}>
+            <div className="post_img" style={{backgroundImage:`url(${url}/${im})`}}>
               <div onClick={handleImgClick} className="icon"><AiFillFileAdd/></div>
             </div>
           </div>

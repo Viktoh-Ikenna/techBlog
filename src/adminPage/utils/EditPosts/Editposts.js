@@ -221,7 +221,7 @@ export const Editposts = (props) => {
                 />
                 <div
                   className="post_img"
-                  style={{ backgroundImage: `url(${im})` }}
+                  style={{ backgroundImage: `url(${url}/${im})` }}
                 >
                   <div onClick={handleImgClick} className="icon">
                     <AiFillFileAdd />
