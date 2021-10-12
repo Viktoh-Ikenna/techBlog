@@ -27,6 +27,7 @@ padding: 0;
 margin: 0;
 text-align: left;
 text-transform:capitalize;
+width: 100%;
 }
 .Normal_post_text_cont >div{
     display: flex;

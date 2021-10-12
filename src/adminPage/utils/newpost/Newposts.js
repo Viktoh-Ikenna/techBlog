@@ -14,7 +14,7 @@ export const Newposts = (props) => {
   const [im,setimg]=useState("https://upload.wikimedia.org/wikipedia/en/6/69/ImagineCover.jpg");
   const Filldate=new Date();
   const [spinner, setspinner] = useState(false);
-  const date = `${Filldate.getDate()}-${Filldate.getMonth()}-${Filldate.getFullYear()}`;
+  const date = `${Filldate.getDate()}-${Filldate.getMonth()+1}-${Filldate.getFullYear()}`;
 
   const handleEditor = (text) => {
     props.body(text);
@@ -55,7 +55,10 @@ props.Date(date)
       try {
         const config = {
           headers: {
-              'content-type': 'multipart/form-data'
+              'content-type': 'multipart/form-data',
+            
+                token: localStorage.getItem('token'),
+              
           },
           withCredentials: true
       }
@@ -67,7 +70,7 @@ props.Date(date)
       if(send>0){
         setspinner(true)
         const response = await axios.post(
-          `${url}api/save/BlogPosts`,
+          `${url}/api/save/BlogPosts`,
           fmd,
           config
         );
@@ -146,7 +149,7 @@ props.Date(date)
           </div>
           <div className="post-image">
             <input ref={image} onChange={handleimgChange} type="file" style={{display:'none'}}/>
-            <div className="post_img" style={{backgroundImage:`url(${url}/${im})`}}>
+            <div className="post_img" style={{backgroundImage:`url(${im})`}}>
               <div onClick={handleImgClick} className="icon"><AiFillFileAdd/></div>
             </div>
           </div>

@@ -30,12 +30,15 @@ text-decoration: none;
   margin: 0;
   margin-bottom: 3px;
   text-transform: capitalize;
+  color: white;
+
 }
 .text div {
   margin-bottom: 5px;
   font-family: "Balsamiq Sans", cursive;
   font-family: "Itim", cursive;
   font-family: "Overlock", cursive;
+  color: black;
 }
 .inner {
   background-image: url("https://upload.wikimedia.org/wikipedia/en/6/69/ImagineCover.jpg");

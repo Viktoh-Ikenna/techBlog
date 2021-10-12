@@ -14,10 +14,11 @@ import { SideContents } from "./utils/SideContents";
 import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
 import axios from "axios";
 import { connect } from "react-redux";
-import $, { data } from "jquery";
 import { Fullscreen } from "../components/Spinner/fullscreen";
 import { url } from "../baseHost";
 var slugify = require("slugify");
+
+
 
 const AdminApp = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -37,12 +38,15 @@ const AdminApp = (props) => {
   // }, [props.Login.state]);
   useEffect(() => {
     axios
-      .get(`${url}/admin`, { withCredentials: true })
+      .get(`${url}/admin`,{headers: {
+        token: localStorage.getItem('token'),
+      }})
       .then((data) => {
-        // console.log(data.data)
+        console.log(data.data)
         props.user(data.data)
         if(data.data.state){
           if(window.location.pathname==="/admin-login"){
+            console.log('hiiqfwfq')
             window.location.pathname="/admin"
           }
         }else{
@@ -77,10 +81,14 @@ setSpining(true)
         credentials: "include", // added this part
         headers: {
           "Content-Type": "application/json",
+          
         },
       });
       setLoggen(loggedin+1)
-      // console.log(await apiData.json());
+    const token =await apiData.json();
+    // console.log(token)
+    // console.log(token.token)
+    localStorage.setItem('token',token.token)
     })();
   };
   const handleToggle = () => {
@@ -123,7 +131,7 @@ setSpining(true)
       <Route path="/admin">
         {props.Login.state===false? (
           <Redirect to="/admin-login" />
-        ) :(
+        ) :<>{props.Login.state===true?(
           <div className="adminApp">
             <div
               className="sideBar"
@@ -180,12 +188,13 @@ setSpining(true)
               </div>
             </div>
           </div>
-        ) }
+        ):<Fullscreen/>} </>}
       </Route>
       <Route path="/admin-login">
         {props.Login.state===false?(<div className="admin_login">
+        {Spinin?<Fullscreen/>:''}
           <div className="login_bal">
-            {Spinin?<Fullscreen/>:''}
+            
             <div></div>
             <div>
               <p>username</p>

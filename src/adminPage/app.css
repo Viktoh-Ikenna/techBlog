@@ -197,7 +197,7 @@ flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:0 5px;
+  padding:2 5px;
 }
 .login_bal>div>div>input{
   width: 95%;
@@ -225,12 +225,11 @@ font-weight: bold;
 .submit_cont{
   flex-direction: row !important;
   justify-content: space-between !important;
-  margin: 15px 0;
   align-items: center !important;
 }
 .submit_cont button{
   background-color: rgb(25, 158, 219);
-  padding: 10px 30px;
+  padding: 10px 35px;
   border-radius: 3px;
   color: white;
   font-weight: bold;

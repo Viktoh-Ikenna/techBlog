@@ -13,12 +13,17 @@ import "./deskHome.css";
 const DesktopHome = (props) => {
 
   useEffect(()=>{
-    (async()=>{
-      const response =axios.get(`${url}/api/save/Blogposts-page`,{withCredentials:true})
-  // console.log((await response).data.data)
-      props.StorePosts((await response).data.data);
-      
-    })()
+    
+      setTimeout(()=>{
+        (async()=>{
+        const response =axios.get(`${url}/api/save/Blogposts-page`,{withCredentials:true})
+        
+        // console.log((await response).data.data)
+            props.StorePosts((await response).data.data);
+          })()
+      },1500)
+
+    
   },[])
   // console.log(props.posts)
   return (
@@ -30,7 +35,7 @@ const DesktopHome = (props) => {
           return(
             <ImagePost key={i} post={e} width="100%" height="100%" font="20px" />
           )
-        }):''
+        }):<ImagePost  width="100%" height="100%" font="20px" />
       }
           </div>
           <div className="banner_post_side m600px">
@@ -38,7 +43,12 @@ const DesktopHome = (props) => {
           return(
             <ImagePost key={i} post={e}  width="49.5%" height="49.5%" font="20px" />
           )
-        }):''
+        }):<>
+        <ImagePost  width="49.5%" height="49.5%" font="20px" />
+        <ImagePost  width="49.5%" height="49.5%" font="20px" />
+        <ImagePost  width="49.5%" height="49.5%" font="20px" />
+        <ImagePost  width="49.5%" height="49.5%" font="20px" />
+        </>
       } 
           </div>
           <div className="banner_post_side mnot600px">
@@ -46,7 +56,10 @@ const DesktopHome = (props) => {
           return(
             <ImagePost key={i} post={e} width="49.5%" height="49.5%" font="20px" />
           )
-        }):''
+        }):<>
+        <ImagePost width="49.5%" height="49.5%" font="20px" />
+        <ImagePost width="49.5%" height="49.5%" font="20px" />
+        </>
       } 
           </div>
         </div>
@@ -57,19 +70,15 @@ const DesktopHome = (props) => {
           return(
             <ImagePost key={i} post={e} width="25%" height="100%" font="12px" />
           )
-        }):''
+        }):<>
+        <ImagePost width="25%" height="100%" font="12px" />
+        <ImagePost width="25%" height="100%" font="12px" />
+        <ImagePost width="25%" height="100%" font="12px" />
+        <ImagePost width="25%" height="100%" font="12px" />
+        </>
       } 
       </div>
-      <div className="Desktop_home_body">
-
-
-
-      
-
-
-
-
-    
+      <div className="Desktop_home_body">    
         <div className="main_bar">
           <div>
             {props.posts?<><HomeCateglisting name="mobile" posts={props.posts['mobile']}/>

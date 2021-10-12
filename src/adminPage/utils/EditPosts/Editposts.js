@@ -62,6 +62,9 @@ export const Editposts = (props) => {
         const config = {
           headers: {
             "content-type": "multipart/form-data",
+          
+              token: localStorage.getItem('token'),
+         
           },
           withCredentials: true,
         };
@@ -93,7 +96,9 @@ export const Editposts = (props) => {
         // console.log('z',paprams.id)
         const response = axios.get(
           `${url}/api/save/posts/${paprams.id}`,
-          { withCredentials: true }
+          {headers: {
+            token: localStorage.getItem('token'),
+          }}
         );
         // console.log('daa',(await response).data.data)
         setdata((await response).data.data);
@@ -135,7 +140,7 @@ export const Editposts = (props) => {
       Titly.current.value = data.Title;
       if (data.image) {
         props.image(data.image);
-        setimg(data.image);
+        setimg(`${url}/${data.image}`);
       }
     }
     for (let m of major) {
@@ -221,7 +226,7 @@ export const Editposts = (props) => {
                 />
                 <div
                   className="post_img"
-                  style={{ backgroundImage: `url(${url}/${im})` }}
+                  style={{ backgroundImage: `url(${im})` }}
                 >
                   <div onClick={handleImgClick} className="icon">
                     <AiFillFileAdd />

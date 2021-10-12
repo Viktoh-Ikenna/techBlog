@@ -3,6 +3,7 @@ import "./HomeCategListing.css";
 import { NormalPost } from "../postTypes/normalPost/normalPost";
 import { GrFormNextLink } from "react-icons/gr";
 import { NormalPostV } from "../postTypes/normalPostVertical/NormalPostV";
+import { Link } from "react-router-dom";
 
 export const HomeCateglisting = (props) => {
   // console.log(props.posts)
@@ -20,7 +21,7 @@ export const HomeCateglisting = (props) => {
       <div className="HomeCateglisting_posts">
 
         <div>
-        {props.posts?props.posts.filter((e,i)=>i<5).map((e,i)=>{
+        {props.posts?props.posts.filter((e,i)=>i<4).map((e,i)=>{
           return(
                   <NormalPost key={i} post={e} />
           )
@@ -33,9 +34,9 @@ export const HomeCateglisting = (props) => {
         </div>
       </div>
       <div className="HomeCateglisting_contBtn">
-        <div className="HomeCateglisting_nextBtn">
+        <Link to={`/posts/${props.name}/1`} className="HomeCateglisting_nextBtn">
           next <GrFormNextLink />
-        </div>
+        </Link>
       </div>
     </div>:''}</>
   );

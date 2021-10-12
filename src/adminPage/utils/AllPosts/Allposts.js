@@ -11,7 +11,9 @@ import { url } from "../../../baseHost";
 const Allposts = (props) => {
 useEffect(()=>{
   (async()=>{
-const response =axios.get(`${url}/api/save/Blogposts`,{withCredentials:true})
+const response =axios.get(`${url}/api/save/Blogposts`,{headers: {
+  token: localStorage.getItem('token'),
+}})
 props.StorePosts((await response).data.data)
   })()
 },[])
