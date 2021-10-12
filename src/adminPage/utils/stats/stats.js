@@ -1,73 +1,38 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./stats.css";
+import { Line } from 'react-chartjs-2';
+import testUtils from "react-dom/test-utils";
 
 export const Stats = () => {
+  const ref = useRef();
+  const data = canvas => {
+    const ctx = canvas.getContext('2d');
+    const g = ctx.createLinearGradient(0,0,100,0);
+    
+    return {
+      labels: ['jan','feb','march','april','may','june','july'],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+}
+
+const options = ()=>{
+  return{
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+}
+}
   return (
-    <div className="stats">
-      <div className="stats_container">
-        <div className="daily_stats">
-          <div className="stats_size">
-           <div><span>10000</span><span className='dash_lines'></span></div>
-           <div> <span>9000</span><span className='dash_lines'></span></div>
-           <div> <span>8000</span><span className='dash_lines'></span></div>
-           <div> <span>7000</span><span className='dash_lines'></span></div>
-           <div> <span>6000</span><span className='dash_lines'></span></div>
-           <div> <span>5000</span><span className='dash_lines'></span></div>
-           <div> <span>4000</span><span className='dash_lines'></span></div>
-           <div> <span>3000</span><span className='dash_lines'></span></div>
-           <div> <span>2000</span><span className='dash_lines'></span></div>
-           <div> <span>1000</span><span className='dash_lines'></span></div>
-          </div>
-          <div style={{ height: "10%" }}>
-   
-            <div>01</div>
-          </div>
-          <div style={{ height: "20%" }}>
-            
-            <div>02</div>
-          </div>
-          <div style={{ height: "5%" }}>
-            
-            <div>03</div>
-          </div>
-          <div style={{ height: "50%" }}>
-            
-            <div>04</div>
-          </div>
-          <div style={{ height: "30%" }}>
-           
-            <div>05</div>
-          </div>
-          <div style={{ height: "90%" }}>
-           
-            <div>05</div>
-          </div>
-          <div style={{ height: "25%" }}>
-            
-            <div>07</div>
-          </div>
-        </div>
-        <div className="quater">
-          <div className="yearly">
-            <select>
-              <option value="">2019</option>
-              <option value="">2019</option>
-              <option value="">2019</option>
-            </select>
-            <div>1,200,000</div>
-          </div>
-          <div className="monthly">
-            <select>
-              <option value="">jan</option>
-              <option value="">feb</option>
-              <option value="">march</option>
-              <option value="">april</option>
-              <option value="">may</option>
-            </select>
-            <div>50000</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div style={{width:"100%",height:"30%"}}><Line ref={ref} data={data} width={100}
+    height={50} options={options} /></div>
+
   );
 };
