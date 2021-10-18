@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiSearch2Line } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
@@ -6,13 +6,26 @@ import { BsDash } from "react-icons/bs";
 import "./deskNav.css";
 import { Link } from "react-router-dom";
 import {SideBar} from '../mobile/SideBar'
+import { connect } from "react-redux";
 
-const DeskNav = () => {
+const DeskNav = (props) => {
   const [search, SetSearch] = useState(false);
   const [textInput, setText] = useState(false);
   const [animate, setAnime] = useState({});
   const [toggle, setToggle] = useState(false);
   const [change, setChange] = useState(false);
+
+useEffect(() => {
+  if(window.location.pathname === '/search'){
+SetSearch(true);
+setTimeout(() => {
+  if(window.screen.width>600) setAnime({ width: "60%" });
+  document.querySelector('.space').style.width='20%';
+  setAnime({ width: "75%" });
+}, 0);
+  }
+}, [])
+
 
   const handleSearch = () => {
     SetSearch(!search);
@@ -25,8 +38,10 @@ const DeskNav = () => {
   const handleText = (e) => {
     if (e.target.value !== "") {
       setText(true);
+    props.search(e.target.value)
     } else {
       setText(false);
+    props.search(e.target.value)
     }
   };
   const mobileToggle=()=>{
@@ -35,6 +50,8 @@ const DeskNav = () => {
       setChange(!change)
     }, 6);
   }
+
+
   return (
     <div>
         {toggle?<SideBar change={change}/>:''}
@@ -77,9 +94,11 @@ const DeskNav = () => {
               <Link to="/posts/accessories/1">accessories</Link>
 
             </div>
-            <div className="search_btn" onClick={handleSearch}>
+            {window.location.pathname !== '/search'?<Link to='/search' className="search_btn" onClick={handleSearch}>
               <RiSearch2Line />
-            </div>
+            </Link>:<div className="search_btn" onClick={handleSearch}>
+              <RiSearch2Line />
+            </div>}
             <div className={`nav_toggle_menu ${toggle?'toggle_it':''}`} onClick={mobileToggle}>
               <div></div>
             </div>
@@ -95,6 +114,7 @@ const DeskNav = () => {
               <span
                 onClick={() => {
                   document.querySelector(".nav_searchBox input").value = "";
+                  props.search('')
                   setText(!textInput);
                 }}
               >
@@ -122,4 +142,21 @@ const DeskNav = () => {
   );
 };
 
-export default DeskNav;
+
+const mapStateToProps = (state) => {
+  return {
+    posts: state.Client,
+  };
+};
+
+//this sets the dispatch method props for the dispatching data
+
+const setter = (dispatch) => {
+  return {
+    search: (search) => {
+      dispatch({ type: "search", payload: search });
+    }
+  };
+};
+
+export default connect(mapStateToProps, setter)(DeskNav);

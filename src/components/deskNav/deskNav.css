@@ -98,6 +98,10 @@ transform: scaleY(1) translate(-30%,65%) ;
 .search_btn{
     height: 50px;
     cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .search_btn:hover{
@@ -128,6 +132,7 @@ transform: scaleY(1) translate(-30%,65%) ;
 .space{
     width:30%;
 }
+
 /* .nav_searchBox input::-we{
 } */
 .nav_searchBox input::-webkit-input-placeholder{

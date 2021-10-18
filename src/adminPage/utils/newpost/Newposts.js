@@ -198,23 +198,23 @@ props.Date(date)
             </label>
             <label>
               <p>Colors :</p>
-              <input type="text" name="Colors" />
+              <input autoComplete="off" type="text" name="Colors" />
             </label>
             <label>
               <p>CPU :</p>
-              <input type="text" name="CPU" />
+              <input autoComplete="off" type="text" name="CPU" />
             </label>
             <label>
               <p>Processor :</p>
-              <input type="text" name="Processor" />
+              <input autoComplete="off" type="text" name="Processor" />
             </label>
             <label>
               <p>dimension :</p>
-              <input type="text" name="dimension" />
+              <input autoComplete="off" type="text" name="dimension" />
             </label>
             <label>
               <p>weight :</p>
-              <input type="text" name="weight" />
+              <input autoComplete="off" type="text" name="weight" />
             </label>
           </div>
         </div>

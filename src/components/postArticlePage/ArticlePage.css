@@ -71,3 +71,24 @@ font-size: 20px;
         padding: 0 !important;
        }
 }
+@media only screen and (max-width:600px){
+    .ArticlePage{
+        width: 100% !important;
+    }
+    .ArticlePage .article .artice_details{
+        width: 80% !important;
+        padding:0 20px;
+    }
+    .ArticlePage .article .title{
+        width: 90% !important;
+        padding-left:20px !important;
+    }
+    .ArticlePage .article{
+        width:100% !important;
+    }
+    .article_text{
+        width: 90% !important;
+        padding: 15px !important;
+        word-wrap: break-word;
+    }
+}

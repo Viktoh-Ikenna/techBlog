@@ -1,50 +1,66 @@
-.Admin_allposts{
-display: flex;
-justify-content: center;
-align-items: flex-start;
+.Admin_allposts {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-.Admin_allposts_container h2{
-margin:0;
+.Admin_allposts_container h2 {
+  margin: 0;
+}
+.Admin_allposts_container {
+  width: 90%;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.11) 0px 0px 3px 2px;
+}
+.Admin_allposts_container h2 {
+  margin: 8px 5px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.281);
+  padding: 10px 0;
+}
+.admin_eachPosts {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.admin_eachPosts:hover {
+  background-color: #ebebeb;
+}
+.admin_eachPosts div,
+.admin_eachPosts a {
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.admin_eachPosts div:first-child {
+  width: 40%;
+  overflow: hidden;
+  justify-content: flex-start !important;
+}
+.edit_post {
+  color: blue;
+  cursor: pointer;
+}
+@media only screen and (max-width:600px){
+    .admin_eachPosts div,
+.admin_eachPosts a {
+  margin: 0 5px;
+  font-size: 12px;
+}
+    .admin_eachPosts div:first-child {
+        width: 50%;
+        overflow: hidden;
+        justify-content: flex-start !important;
 
-}
-.Admin_allposts_container{
-    width:90%;
-    margin: 20px 0;
-padding:20px;
-box-shadow: rgba(0, 0, 0, 0.11) 0px 0px 3px 2px;
-
-}
-.Admin_allposts_container h2{
-margin:8px 5px;
-border-bottom: 2px solid rgba(0, 0, 0, 0.281);
-padding:10px 0
-}
-.admin_eachPosts{
-display:flex;
-width:100%;
-justify-content: space-between;
-align-items: center;
-padding:18px 0;
-margin-bottom: 5px;
-cursor: pointer;
-}
-.admin_eachPosts:hover{
-    background-color: #ebebeb;
-}
-.admin_eachPosts div,.admin_eachPosts a{
-    margin: 0 20px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    text-transform: capitalize;
-}
-.admin_eachPosts div:first-child{
-    width: 40%;
-    overflow: hidden;
-    justify-content: flex-start !important;
-}
-.edit_post{
-    color: blue;
-    cursor: pointer;
-}
+      }
+      .Admin_allposts_container>div:nth-child(odd){
+          background-color: #ebebeb;
+      }
+  }
+  

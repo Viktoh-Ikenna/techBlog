@@ -12,6 +12,7 @@ import {
   Redirect,
   useLocation,
 } from "react-router-dom";
+import SearchPages from "../searchpage/searchPage";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             <Route path='/article/:id'>
               <ArticlePage />
             </Route>
+            <Route path="/search">
+                  <SearchPages />
+                </Route>
             <Route path='*'>
               <div>404 bro</div>
             </Route>

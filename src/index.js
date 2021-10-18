@@ -55,8 +55,30 @@ const Client=(state = {}, action)=>{
       return state;
   }
 }
+const Comments=(state = {}, action)=>{
+  switch (action.type) {
+    case "comment":
+      return {...state,message:action.payload}
+    case "commenter":
+    return {...state,posts:action.payload.post,name:action.payload.name,Email:action.payload.email,Date:action.payload.date}
+  case 'null':
+    return {}
+    default:
+      return state;
+  }
+
+}
+const searching=(state = {}, action)=>{
+  switch (action.type) {
+    case "search":
+      return {message:action.payload}
+    default:
+      return state;
+  }
+
+}
 const store = createStore(
-  combineReducers({ SubmitPostReducer,Admin,posts,Client}),
+  combineReducers({ SubmitPostReducer,Admin,posts,Client,Comments,searching}),
   {},
   applyMiddleware(thunk)
 );

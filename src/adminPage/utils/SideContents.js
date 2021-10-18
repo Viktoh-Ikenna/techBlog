@@ -7,10 +7,11 @@ import { AiFillDashboard, AiOutlineComment } from "react-icons/ai";
 import { RiArticleFill, RiSettings2Line } from "react-icons/ri";
 import { ImStatsBars } from "react-icons/im";
 
-export const SideContents = () => {
+export const SideContents = ({unshow}) => {
 const history=useHistory();
 
     const pushIt=(url)=>{
+      unshow()
         try{
             history.push(url)
         }
@@ -22,7 +23,7 @@ console.log(err);
     return (
 
         <div>
-          <Link to='/admin/'>
+          <Link onClick={unshow} to='/admin/'>
             <span>
               <AiFillDashboard />{" "}
             <p>Dashboard</p>
@@ -38,20 +39,20 @@ console.log(err);
               <li onClick={()=>pushIt("/admin/newpost")}>New Post</li>
             </ul>
           </a>
-          <Link to='/admin/stats'>
+          <Link onClick={unshow} to='/admin/stats'>
             <span>
               <ImStatsBars />
               <p>Stats</p>
             </span>
             
           </Link>
-          <Link to='/admin/comments'>
+          <Link onClick={unshow} to='/admin/comments'>
             <span>
               <AiOutlineComment />
             <p>Comments</p>
             </span>
           </Link>
-          <Link to='/admin/settings'>
+          <Link onClick={unshow}  to='/admin/settings'>
             <span>
               <RiSettings2Line />
             <p>Settings</p>

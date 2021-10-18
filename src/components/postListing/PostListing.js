@@ -34,7 +34,13 @@ export const PostListing = ({ state }) => {
     }
   };
   useEffect(() => {
-    setPosts(state?state.reverse().filter((el,page)=>page>(+params.page===1?-1:(+params.page-1)*6)):"")
+    if(window.location.pathname !== '/search'){
+      setPosts(state?state.reverse().filter((el,page)=>page>(+params.page===1?-1:(+params.page-1)*6)):"")
+
+    }else{
+    setPosts(state)
+
+    }
   }, [params.page,state])
   
   return (
@@ -46,7 +52,7 @@ export const PostListing = ({ state }) => {
       ) : (
         <Fullscreen />
       )}
-      {posts ? state.length > 7 ? <Pagination state={state.reverse().filter((el,page)=>page>(+params.page===1?-1:(+params.page-1)*6)).length} /> : <></> : <></>}
+      {posts &&window.location.pathname !== '/search' ? state.length > 7 ? <Pagination state={posts.length} /> : <></> : <></>}
     </div>
   );
 };

@@ -24,6 +24,8 @@ const AdminApp = (props) => {
   const [toggle, setToggle] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [Spinin, setSpining] = useState(false)
+
+  const sidetoggler=useRef()
   const [background, setprofileImg] = useState(
     "https://upload.wikimedia.org/wikipedia/en/6/69/ImagineCover.jpg"
   );
@@ -92,16 +94,35 @@ setSpining(true)
     })();
   };
   const handleToggle = () => {
-    if (!toggle) {
-      setTimeout(() => {
-        document.querySelector(".sideBar").classList.add("ttoggle_admin");
-      }, 390);
+
+    try{
+      if (!toggle) {
+        setTimeout(() => {
+          sidetoggler.current.classList.add("ttoggle_admin");
+        }, 390);
+ 
     } else {
-      document.querySelector(".sideBar").classList.remove("ttoggle_admin");
+      sidetoggler.current.classList.remove("ttoggle_admin");
     }
+    }catch(err){
+      
+    }
+    
     setToggle(!toggle);
   };
 
+const untoggle=()=>{
+  try{
+    if(window.screen.width<600){
+      sidetoggler.current.classList.remove("ttoggle_admin");
+      setToggle(!toggle);
+    }
+  }catch(err){
+
+  }
+
+ 
+}
   const changeProfileImg = () => {
     profile.current.dispatchEvent(
       new MouseEvent("click", {
@@ -134,6 +155,7 @@ setSpining(true)
         ) :<>{props.Login.state===true?(
           <div className="adminApp">
             <div
+            ref={ sidetoggler}
               className="sideBar"
               style={{ width: `${toggle ? "7%" : "22%"}` }}
             >
@@ -142,26 +164,34 @@ setSpining(true)
                   <CgSidebarRight />
                 </span>
               </div>
-              <SideContents />
+              <SideContents unshow={untoggle} />
             </div>
             <div
               className="constainer"
               style={{ width: `${toggle ? "93%" : "78%"}` }}
             >
               <div className="AdminNav">
-                <div className="Adminlogout">logOut</div>
-                <div
+              <div className="intack">
+                <span onClick={handleToggle}>
+                  <CgSidebarRight />
+                </span>
+              </div>
+              <div>
+              <div className="Adminlogout">logOut</div>
+              <div
                   className="profileImg"
                   onClick={changeProfileImg}
                   style={{ backgroundImage: `url(${background})` }}
-                ></div>
-                <input
+              ></div>
+              <input
                   onChange={handleSelectProfile}
                   type="file"
                   ref={profile}
                   id="profile_file"
                   style={{ display: "none" }}
                 />
+              </div>
+              
               </div>
               <div className="content">
                 <Route exact path="/admin">
@@ -176,7 +206,7 @@ setSpining(true)
                 <Route path="/admin/settings">
                   <Settins />
                 </Route>
-                <Route path="/admin/comments">
+                <Route path="/admin">
                   <Comments />
                 </Route>
                 <Route path="/admin/stats">
